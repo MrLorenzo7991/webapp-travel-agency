@@ -12,7 +12,7 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
               <div class="container-fluid">
                 <a class="navbar-brand disabled">
-                    <img src="~/img/LogoSoloNome.png" alt="Logo Lorenzo Miccio" width=250px></a>
+                    <img src="#" alt="Logo Travel agency" width=250px></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
                 </button>
@@ -22,7 +22,7 @@
                       <a class="nav-link active" aria-current="page" href="#">Home</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="#">Amministrazione</a>
+                      <a class="nav-link" href="@Url.Action("Index","Admin")">Admin</a>
                     </li>
                   </ul>
                 </div>
@@ -33,7 +33,22 @@
         @RenderBody()
     </main>
     <footer>
-
+        <footer class="bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col">                  
+                    <img src="#" alt="Logo" width="400" class="mx-auto d-block"/>                   
+                </div>
+                <div class="row">
+                    <div class="col text-center">
+                        <p>Via delle Patate 143, 80122, Napoli(NA)<br/>
+                           Per informazioni: 33118512488 - 0812746235 <br/>
+                           agenziadiviaggiobella@ranfsd.it
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </footer>
 
 
