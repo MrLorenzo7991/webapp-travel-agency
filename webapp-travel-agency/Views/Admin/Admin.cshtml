@@ -1,1 +1,56 @@
-﻿<h1>Ciaoooooo</h1>
+﻿@model List<PacchettoViaggio>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h2>Benvenuto nella pagina di amministrazione dei pacchetti</h2>
+            <p>Da qui potrai vedere aggiungere, modificare o eliminare pacchetti di viaggi</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3">
+            <a href="@Url.Action("Create", "Admin")"><button type="button" class="btn btn-primary">Aggiungi un pacchetto</button></a>
+        </div>
+    </div>
+        @if(Model.Count() == 0)
+        {
+            <div class="row">
+                <div>
+                    <div class="col">
+                        <h3>Non sono presenti pacchetti disponibili</h3>
+                    </div>
+                </div>
+            </div>
+        }
+        else
+        {
+            @foreach(PacchettoViaggio pacchetto in Model)
+            {
+                <div class="row">
+                    <div class="col-1">
+                        <p>@pacchetto.Id</p>       
+                    </div>
+                    <div class="col-2">
+                        <p>@pacchetto.UrlImmagine</p>     
+                    </div>
+                    <div class="col-2">
+                        <p>@pacchetto.Nome</p>     
+                    </div>
+                    <div class="col-3">
+                        <p>@pacchetto.DescrizioneBreve</p>     
+                    </div>
+                    <div class="col-2">
+                        <p>@pacchetto.Prezzo</p>     
+                    </div>
+                    <div class="col-2">
+                        <a href="@Url.Action("Details", "Admin", new{id = pacchetto.Id})">Vedi dettagli</a> 
+                        <a href="@Url.Action("Edit", "Admin", new{id = pacchetto.Id})">Modifica</a>  
+                        <form action="@Url.Action("Delete", "Admin", new{id = pacchetto.Id})" method="post">
+                                @Html.AntiForgeryToken()
+                                <button class="btn btn-danger mx-auto h-100 w-100" type="submit"><i class="gg-trash mx-auto my-1"></i></button>  
+                            </form>
+                    </div>
+                </div>
+            }            
+        }
+</div>

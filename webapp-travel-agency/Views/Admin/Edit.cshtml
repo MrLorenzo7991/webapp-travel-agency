@@ -1,0 +1,49 @@
+﻿@model PacchettoViaggio
+
+<div class="container my-5 shadow-lg p-3 mb-5 bg-body rounded">
+    <div class="row mt-2 mb-4">
+        <div class="col">
+            <h1 class="fst-italic text-center">Modifica un pacchetto viaggio</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6 col-md-9 col-12 mx-auto">
+            <form asp-action="Edit" asp-controller="Admin" method="post" class="row">
+                @Html.AntiForgeryToken()
+                <div class="col-md-9 my-2">
+                    <span>Nome:</span>
+                    <input type="text" class="form-control" asp-for="Nome"/>
+                    <span asp-validation-for="Nome" class="text-danger"></span>
+                </div>
+                <div class="col-md-3 my-2">
+                    <span>Prezzo:</span>
+                    <input type="number" class="form-control" asp-for="Prezzo" step="0.01" min="0"/>
+                    <span asp-validation-for="Prezzo" class="text-danger"></span>
+                </div>
+                <div class="col-12 my-2">
+                    <span>Durata in giorni:</span>
+                    <input type="number" class="form-control" asp-for="GiorniDiViaggio" min="0"/>
+                    <span asp-validation-for="GiorniDiViaggio" class="text-danger"></span>
+                </div>
+                <div class="col-12 my-2">
+                    <span>Url Immagine:</span>
+                    <input type="url" class="form-control" asp-for="UrlImmagine"/>
+                    <span asp-validation-for="UrlImmagine" class="text-danger"></span>
+                </div>
+                <div class="col-12 my-2">
+                    <span>Descrizione breve:</span>
+                    <input type="text" class="form-control" asp-for="DescrizioneBreve"/>
+                    <span asp-validation-for="DescrizioneBreve" class="text-danger"></span>
+                </div>
+                <div class="col-12 my-2">
+                    <span>Descrizione completa:</span>
+                    <input type="text" class="form-control" asp-for="DescrizioneCompleta"/>
+                    <span asp-validation-for="DescrizioneCompleta" class="text-danger"></span>
+                </div>
+                <div class="text-end my-2">
+                    <input type="submit" class="btn btn-small btn-success" value="Modifica">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

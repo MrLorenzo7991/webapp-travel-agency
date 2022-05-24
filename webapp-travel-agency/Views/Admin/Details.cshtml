@@ -1,0 +1,27 @@
+﻿@model PacchettoViaggio
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h2>@Model.Nome</h2>
+            <p>@Model.Prezzo</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <img src="@Model.UrlImmagine" alt="Immagine pacchetto"/>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-9">
+            <p>@Model.DescrizioneBreve</p>
+        </div>
+        <div class="col-3">
+            <p>@Model.GiorniDiViaggio giorni</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <p>@Model.DescrizioneCompleta</p>
+        </div>
+    </div>
+</div>
